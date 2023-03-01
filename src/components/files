@@ -1,0 +1,138 @@
+ <div className='wrapper'>
+                        <div className='round'></div>
+                        <img src='./images/watch6.jpg' alt=''/>
+                      
+                    </div>
+
+                    .wrapper{
+                        display: flex;
+                        align-items: baseline;
+                        justify-content: center;
+                        position: relative;
+                    }
+                    .wrapper img{
+                        height: 200px;
+                        width: 200px;
+                        position: absolute;
+                        z-index: 99;
+                        bottom: 0;
+                        margin-bottom: 25px;
+                        border-radius: 50%;
+                    }
+                    
+                    .wrapper .round{
+                        height: 250px;
+                        width: 250px;
+                        position: absolute;
+                        background-color: rgb(145, 140, 140);
+                        z-index: -99;
+                        bottom: 0;
+                        border-radius: 50%;
+                    }
+
+
+                    import React from 'react';
+import "./HeroStyles.modules.css";
+import {FaAngleRight} from "react-icons/fa";
+import {FaAngleLeft} from "react-icons/fa";
+
+function Comments() {
+    const slideLeft = () =>{
+        var inside = document.getElementById('inside')
+        inside.scrollLeft = inside.scrollLeft -150
+      }
+      const slideRight = () =>{
+        var inside = document.getElementById('inside')
+        inside.scrollLeft = inside.scrollLeft +150
+      }
+  return (
+    <div>
+         <div className='comments'>
+        <div className='container'>
+            <div id='inner'>
+        <div className='arrow'><FaAngleLeft onClick={slideLeft} /></div>
+            <div id='inside'>
+            <div>
+                <img src='./images/watch4.jpg' alt='' />
+                <div>
+                    Whenever i wanna look fly, i visit Xclusive Stores,
+                    They have all kind of clothes, with affordable 
+                    prices, And they deliver on time with zero worries.
+            </div>
+            </div>
+
+            <div>
+            <img src='./images/watch4.jpg' alt='' />
+            <div>
+                    Whenever i wanna look fly, i visit Xclusive Stores,
+                    They have all kind of clothes, with affordable 
+                    prices, And they deliver on time with zero worries.
+            </div>
+            </div>
+
+            <div>
+            <img src='./images/watch4.jpg' alt='' />
+            <div>
+                    Whenever i wanna look fly, i visit Xclusive Stores,
+                    They have all kind of clothes, with affordable 
+                    prices, And they deliver on time with zero worries.
+            </div>
+            </div>
+
+            <div>
+                <div>
+            <img src='./images/watch4.jpg' alt='' />
+                    Whenever i wanna look fly, i visit Xclusive Stores,
+                    They have all kind of clothes, with affordable 
+                    prices, And they deliver on time with zero worries.
+            </div>
+            </div>
+
+            <div>
+            <img src='./images/watch4.jpg' alt='' />
+            <div>
+                    Whenever i wanna look fly, i visit Xclusive Stores,
+                    They have all kind of clothes, with affordable 
+                    prices, And they deliver on time with zero worries.
+            </div>
+            </div>
+        </div>
+        <div className='arrow'><FaAngleRight onClick={slideRight} /></div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <div>
+    
+        <div className='review'>Reviews</div>
+        <div className='carousel'>
+          <Swiper
+          slidesPerView={3}
+          slidesPerGroup={1}
+          spaceBetween={20}
+          className='tCarousel'> 
+            {
+              TestimonialsData.map((testimonial, i) =>(
+                 <SwiperSlide>
+                   <div className='testimonial'>
+                    <img src={testimonial.img} alt="" />
+                    <span>{testimonial.comment}</span>
+                    <hr />
+                    <span>{testimonial.name}</span>
+                    </div>
+                    
+                 </SwiperSlide>
+              ))
+              
+            }
+  
+          </Swiper>
+        </div>
+  )
+}
+
+export default Comments

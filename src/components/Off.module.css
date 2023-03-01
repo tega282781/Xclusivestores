@@ -1,0 +1,15 @@
+.deals{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.back{
+    position: relative;
+    z-index: -99;
+    background-color: black;
+    height: 400px;
+    width: 400px;
+}
